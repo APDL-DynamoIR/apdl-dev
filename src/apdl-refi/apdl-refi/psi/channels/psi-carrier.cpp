@@ -5,14 +5,21 @@
 
 USING_APDLNS(RefI)
 
-
-APDL_Basic_Application::APDL_Basic_Application()
+PSI_Carrier::PSI_Carrier()
+  :  flagcode_(nullptr), typex_(nullptr)
 {
 
 }
 
-
-void APDL_Basic_Application::set_version_string(unsigned maj, unsigned min, unsigned patch)
+void PSI_Carrier::get_flags(QMap<QString, quint64>& flag_map)
 {
- set_version_string(QString("%1.%2.%3").arg(maj).arg(min).arg(patch));
+ if(*flagcode_)
+ {
+  QStringList qsl = flagcode_->split(' ');
+  for(QString qs : qsl)
+  {
+   flag_map[qs] = 0;
+  }
+ }
 }
+

@@ -6,27 +6,24 @@
 
 #include "accessors.h"
 
-#include <QString>
+#include "psi-carrier.h"
+
+#include <QList>
 
 APDLNS_(RefI)
 
 class PSI_Channel
 {
- QString name_;
- QString version_string_;
- QString description_;
+ QString kind_;
+
+ QList<PSI_Carrier> carriers_;
 
 public:
 
- ACCESSORS(QString ,name)
- ACCESSORS(QString ,version_string)
- ACCESSORS(QString ,description)
+ ACCESSORS(QString ,kind)
+ ACCESSORS__RGET(QList<PSI_Carrier> ,carriers)
 
- APDL_Basic_Application();
-
- void set_version_string(unsigned maj, unsigned min, unsigned patch = 0);
-
-
+ PSI_Channel();
 
 
 };

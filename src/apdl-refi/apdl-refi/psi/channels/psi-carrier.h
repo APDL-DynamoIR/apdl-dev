@@ -7,24 +7,33 @@
 #include "accessors.h"
 
 #include <QString>
+#include <QMap>
 
 APDLNS_(RefI)
 
+class PSI_Type_Expression;
+
 class PSI_Carrier
 {
- QString name_;
- QString version_string_;
- QString description_;
+ QString symbol_;
+ PSI_Type_Expression* typex_;
+
+ union
+ {
+  QString* flagcode_;
+  quint64 flagmask_;
+ };
 
 public:
 
- ACCESSORS(QString ,name)
- ACCESSORS(QString ,version_string)
- ACCESSORS(QString ,description)
+ ACCESSORS(QString ,symbol)
+ ACCESSORS(PSI_Type_Expression* ,typex)
+ ACCESSORS(quint64 ,flagmask)
+ ACCESSORS(QString* ,flagcode)
 
- APDL_Basic_Application();
+ PSI_Carrier();
 
- void set_version_string(unsigned maj, unsigned min, unsigned patch = 0);
+ void get_flags(QMap<QString, quint64>& flag_map);
 
 
 
