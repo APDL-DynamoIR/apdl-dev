@@ -5,6 +5,7 @@ include(../build-group.pri)
 
 TEMPLATE = app
 
-SOURCES += main.cpp
+SOURCES += $$SRC_DIR/main.cpp
+
 
 

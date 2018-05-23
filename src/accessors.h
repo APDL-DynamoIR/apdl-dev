@@ -1,6 +1,17 @@
 #ifndef ACCESSORS__H
 #define ACCESSORS__H
 
+
+#ifndef APDL__PASSKEY
+#define APDL__PASSKEY \
+class _passkey \
+{ \
+ friend class APDL_Refi; \
+ _passkey(){} \
+};
+#endif
+
+
 #ifndef ACCESSORS__GET
 #define ACCESSORS__GET(type, name) \
  type name() const { return name##_; }
@@ -47,6 +58,14 @@
 #define ACCESSORS__CONST_RGET(type, name) \
  const type& name() const { return name##_; }
 #endif
+
+
+#ifndef ACCESSORS__RGET_CONST_RGET
+#define ACCESSORS__RGET_CONST_RGET(type, name) \
+ ACCESSORS__RGET(type, name) \
+ ACCESSORS__CONST_RGET(type, name)
+#endif
+
 
 #ifndef ACCESSORS__RGET_DEREF
 #define ACCESSORS__RGET_DEREF(type, name) \
@@ -101,6 +120,29 @@
 #define ACCESSORS(type, name) \
  ACCESSORS__GET(type, name) \
  ACCESSORS__SET(type, name)
+#endif
+
+
+#ifndef ACCESSORS__INIT_PTR__DECLARE
+#define ACCESSORS__INIT_PTR__DECLARE(name) \
+ void init_##name();
+#endif
+
+#ifndef ACCESSORS__INIT_PTR
+#define ACCESSORS__INIT_PTR(cl, type, name) \
+ void cl::init_##name() {name##_ = new type;}
+#endif
+
+#ifndef ACCESSORS__INIT_PTR__PASSKEY
+#define ACCESSORS__INIT_PTR__PASSKEY(cl, type, name) \
+ void cl::init_##name() {name##_ = new type(type::_passkey());}
+#endif
+
+
+#ifndef ACCESSORS__WITH_INIT_PTR
+#define ACCESSORS__WITH_INIT_PTR(type, name) \
+ ACCESSORS(type*, name) \
+ ACCESSORS__INIT_PTR__DECLARE(name)
 #endif
 
 
