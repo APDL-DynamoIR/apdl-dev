@@ -39,6 +39,8 @@ public:
  void init_from_init_code(quint16 code);
 
  void supply_data(QByteArray& qba) const;
+ void absorb_data(const QByteArray& qba);
+
 
 };
 

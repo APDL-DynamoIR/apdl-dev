@@ -37,6 +37,11 @@ public:
  APDL_Repository_Info(QUrl url);
  void supply_data(QByteArray& qba) const;
 
+ static void absorb_data(QDataStream& qds, APDL_Repository_Info& _this);
+ friend void operator>>(QDataStream& qds, APDL_Repository_Info& _this)
+ {
+  APDL_Repository_Info::absorb_data(qds, _this);
+ }
 
 };
 

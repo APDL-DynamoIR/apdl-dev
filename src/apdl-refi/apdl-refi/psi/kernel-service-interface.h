@@ -23,6 +23,11 @@ public:
  Kernel_Service_Interface();
  void supply_data(QByteArray& qba) const;
 
+ static void absorb_data(QDataStream& qds, Kernel_Service_Interface& _this);
+ friend void operator>>(QDataStream& qds, Kernel_Service_Interface& _this)
+ {
+  Kernel_Service_Interface::absorb_data(qds, _this);
+ }
 
 };
 

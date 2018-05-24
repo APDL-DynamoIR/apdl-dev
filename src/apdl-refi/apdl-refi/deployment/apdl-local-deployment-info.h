@@ -38,6 +38,12 @@ public:
  APDL_Local_Deployment_Info();
  void supply_data(QByteArray& qba) const;
 
+ static void absorb_data(QDataStream& qds, APDL_Local_Deployment_Info& _this);
+ friend void operator>>(QDataStream& qds, APDL_Local_Deployment_Info& _this)
+ {
+  APDL_Local_Deployment_Info::absorb_data(qds, _this);
+ }
+
 
 };
 

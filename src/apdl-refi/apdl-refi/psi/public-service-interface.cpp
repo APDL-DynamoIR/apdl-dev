@@ -34,3 +34,12 @@ void Public_Service_Interface::supply_data(QByteArray& qba) const
  }
 
 }
+
+void Public_Service_Interface::absorb_data(QDataStream& qds, Public_Service_Interface& _this)
+{
+ qds >> _this.ksi_;
+ qds >> _this.kbi_;
+ qds >> _this.kci_;
+
+}
+

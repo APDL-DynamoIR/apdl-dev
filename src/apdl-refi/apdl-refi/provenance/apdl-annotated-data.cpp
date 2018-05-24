@@ -32,3 +32,12 @@ void APDL_Annotated_Data::supply_data(QByteArray& qba) const
 
 }
 
+void APDL_Annotated_Data::absorb_data(QDataStream& qds, APDL_Annotated_Data& _this)
+{
+ qds >> _this.application_name_;
+ qds >> _this.data_file_;
+ qds >> _this.data_folder_;
+ qds >> _this.data_buffer_;
+ qds >> _this.data_base32_;
+
+}

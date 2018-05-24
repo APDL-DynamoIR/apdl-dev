@@ -37,6 +37,13 @@ public:
  APDL_Annotated_Data(_passkey);
  void supply_data(QByteArray& qba) const;
 
+
+ static void absorb_data(QDataStream& qds, APDL_Annotated_Data& _this);
+ friend void operator>>(QDataStream& qds, APDL_Annotated_Data& _this)
+ {
+  APDL_Annotated_Data::absorb_data(qds, _this);
+ }
+
 };
 
 _APDLNS(RefI)

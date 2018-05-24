@@ -28,6 +28,15 @@ public:
 
  void supply_data(QByteArray& qba) const;
 
+ //void absorb_data(QDataStream& qds);
+
+ static void absorb_data(QDataStream& qds, APDL_Basic_Application& _this);
+
+ friend void operator>>(QDataStream& qds, APDL_Basic_Application& _this)
+ {
+  APDL_Basic_Application::absorb_data(qds, _this);
+ }
+
 
 
 };

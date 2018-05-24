@@ -25,6 +25,13 @@ void APDL_Basic_Application::supply_data(QByteArray& qba) const
  qds << name_;
  qds << version_string_;
  qds << description_;
+}
 
+
+void APDL_Basic_Application::absorb_data(QDataStream& qds, APDL_Basic_Application& _this)
+{
+ qds >> _this.name_;
+ qds >> _this.version_string_;
+ qds >> _this.description_;
 }
 

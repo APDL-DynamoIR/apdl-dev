@@ -15,3 +15,16 @@ void Kernel_Component_Interface::supply_data(QByteArray& qba) const
 {
  Kernel_Interface_Base::supply_data(qba);
 }
+
+void Kernel_Component_Interface::absorb_data(QDataStream& qds, Kernel_Component_Interface& _this)
+{
+ qds >> _this.description_;
+ qds >> _this.representation_;
+ QString enc;
+ qds >> enc;
+
+ _this.read_from_encoding(enc);
+}
+
+
+

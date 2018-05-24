@@ -113,3 +113,28 @@ void APDL_Refi::supply_data(QByteArray& qba) const
  }
 
 }
+
+void APDL_Refi::absorb_data(const QByteArray& qba)
+{
+ QDataStream qds(qba);
+
+ quint64 init_code;
+ qds >> init_code;
+ init_from_init_code(init_code);
+
+ if(basic_application_info_)
+   qds >> *basic_application_info_;
+
+ if(local_deployment_info_)
+   qds >> *local_deployment_info_;
+
+ if(repository_info_)
+   qds >> *repository_info_;
+
+ if(annotated_data_)
+   qds >> *annotated_data_;
+
+ if(psi_)
+   qds >> *psi_;
+
+}
