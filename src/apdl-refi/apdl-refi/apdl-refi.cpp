@@ -77,41 +77,20 @@ void APDL_Refi::supply_data(QByteArray& qba) const
  quint64 init_code = get_init_code();
  qds << init_code;
 
- {
-  QByteArray qba1;
-  if(basic_application_info_)
-    basic_application_info_->supply_data(qba1);
-  qds << qba1;
- }
+ if(basic_application_info_)
+   qds << *basic_application_info_;
 
- {
-  QByteArray qba1;
-  if(local_deployment_info_)
-    local_deployment_info_->supply_data(qba1);
-  qds << qba1;
- }
+ if(local_deployment_info_)
+   qds << *local_deployment_info_;
 
- {
-  QByteArray qba1;
-  if(repository_info_)
-    repository_info_->supply_data(qba1);
-  qds << qba1;
- }
+ if(repository_info_)
+   qds << *repository_info_;
 
- {
-  QByteArray qba1;
-  if(annotated_data_)
-    annotated_data_->supply_data(qba1);
-  qds << qba1;
- }
+ if(annotated_data_)
+   qds << *annotated_data_;
 
- {
-  QByteArray qba1;
-  if(psi_)
-    psi_->supply_data(qba1);
-  qds << qba1;
- }
-
+ if(psi_)
+   qds << *psi_;
 }
 
 void APDL_Refi::absorb_data(const QByteArray& qba)
@@ -138,3 +117,44 @@ void APDL_Refi::absorb_data(const QByteArray& qba)
    qds >> *psi_;
 
 }
+
+
+
+
+
+
+// {
+//  QByteArray qba1;
+//  if(basic_application_info_)
+//    basic_application_info_->supply_data(qba1);
+//  qds << qba1;
+// }
+
+// {
+//  QByteArray qba1;
+//  if(local_deployment_info_)
+//    local_deployment_info_->supply_data(qba1);
+//  qds << qba1;
+// }
+
+// {
+//  QByteArray qba1;
+//  if(repository_info_)
+//    repository_info_->supply_data(qba1);
+//  qds << qba1;
+// }
+
+// {
+//  QByteArray qba1;
+//  if(annotated_data_)
+//    annotated_data_->supply_data(qba1);
+//  qds << qba1;
+// }
+
+// {
+//  QByteArray qba1;
+//  if(psi_)
+//    psi_->supply_data(qba1);
+//  qds << qba1;
+// }
+

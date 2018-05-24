@@ -35,6 +35,7 @@ public:
 
  Kernel_Interface_Base();
  void supply_data(QByteArray& qba) const;
+ void supply_data(QDataStream& qds) const;
 
 
 };

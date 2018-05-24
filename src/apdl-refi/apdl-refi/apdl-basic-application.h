@@ -27,6 +27,7 @@ public:
  void set_version_string(unsigned maj, unsigned min, unsigned patch = 0);
 
  void supply_data(QByteArray& qba) const;
+ void supply_data(QDataStream& qds) const;
 
  //void absorb_data(QDataStream& qds);
 
@@ -36,9 +37,6 @@ public:
  {
   APDL_Basic_Application::absorb_data(qds, _this);
  }
-
-
-
 };
 
 _APDLNS(RefI)

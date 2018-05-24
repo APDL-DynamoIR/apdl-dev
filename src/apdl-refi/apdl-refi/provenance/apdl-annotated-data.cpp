@@ -23,7 +23,12 @@ APDL_Annotated_Data::APDL_Annotated_Data(_passkey)
 void APDL_Annotated_Data::supply_data(QByteArray& qba) const
 {
  QDataStream qds(&qba, QIODevice::WriteOnly);
+ supply_data(qds);
 
+}
+
+void APDL_Annotated_Data::supply_data(QDataStream& qds) const
+{
  qds << application_name_;
  qds << data_file_;
  qds << data_folder_;

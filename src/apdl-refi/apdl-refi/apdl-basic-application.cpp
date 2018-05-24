@@ -18,13 +18,17 @@ void APDL_Basic_Application::set_version_string(unsigned maj, unsigned min, unsi
  set_version_string(QString("%1.%2.%3").arg(maj).arg(min).arg(patch));
 }
 
-void APDL_Basic_Application::supply_data(QByteArray& qba) const
+void APDL_Basic_Application::supply_data(QDataStream& qds) const
 {
- QDataStream qds(&qba, QIODevice::WriteOnly);
-
  qds << name_;
  qds << version_string_;
  qds << description_;
+}
+
+void APDL_Basic_Application::supply_data(QByteArray& qba) const
+{
+ QDataStream qds(&qba, QIODevice::WriteOnly);
+ supply_data(qds);
 }
 
 

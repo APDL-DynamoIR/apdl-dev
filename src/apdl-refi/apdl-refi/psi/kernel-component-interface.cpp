@@ -1,5 +1,7 @@
 
 #include "kernel-component-interface.h"
+#include "apdl-refi.h"
+
 
 #include "apdlns.h"
 
@@ -9,6 +11,11 @@ Kernel_Component_Interface::Kernel_Component_Interface()
  :  Kernel_Interface_Base()
 {
 
+}
+
+void Kernel_Component_Interface::supply_data(QDataStream& qds) const
+{
+ Kernel_Interface_Base::supply_data(qds);
 }
 
 void Kernel_Component_Interface::supply_data(QByteArray& qba) const

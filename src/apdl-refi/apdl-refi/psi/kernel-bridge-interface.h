@@ -22,6 +22,7 @@ public:
 
  Kernel_Bridge_Interface();
  void supply_data(QByteArray& qba) const;
+ void supply_data(QDataStream& qds) const;
 
  static void absorb_data(QDataStream& qds, Kernel_Bridge_Interface& _this);
  friend void operator>>(QDataStream& qds, Kernel_Bridge_Interface& _this)

@@ -22,7 +22,11 @@ APDL_Repository_Info::APDL_Repository_Info(_passkey)
 void APDL_Repository_Info::supply_data(QByteArray& qba) const
 {
  QDataStream qds(&qba, QIODevice::WriteOnly);
+ supply_data(qds);
+}
 
+void APDL_Repository_Info::supply_data(QDataStream& qds) const
+{
  qds << url_;
  qds << repository_kind_;
  qds << programming_languages_;

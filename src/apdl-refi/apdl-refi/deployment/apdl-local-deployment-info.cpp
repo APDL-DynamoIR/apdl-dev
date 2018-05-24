@@ -36,7 +36,11 @@ void APDL_Local_Deployment_Info::absorb_data(QDataStream& qds, APDL_Local_Deploy
 void APDL_Local_Deployment_Info::supply_data(QByteArray& qba) const
 {
  QDataStream qds(&qba, QIODevice::WriteOnly);
+ supply_data(qds);
+}
 
+void APDL_Local_Deployment_Info::supply_data(QDataStream& qds) const
+{
  qds << executable_path_;
  qds << internal_data_path_;
  qds << user_data_path_;

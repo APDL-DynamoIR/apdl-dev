@@ -17,6 +17,13 @@ class APDL_Repository_Info;
 class APDL_Annotated_Data;
 class Public_Service_Interface;
 
+template<typename T>
+void operator<<(QDataStream& qds, const T& _this)
+{
+ _this.supply_data(qds);
+}
+
+
 class APDL_Refi
 {
  APDL_Basic_Application* basic_application_info_;

@@ -23,6 +23,11 @@ void Kernel_Interface_Base::read_from_encoding(QString enc)
 void Kernel_Interface_Base::supply_data(QByteArray& qba) const
 {
  QDataStream qds(&qba, QIODevice::WriteOnly);
+ supply_data(qds);
+}
+
+void Kernel_Interface_Base::supply_data(QDataStream& qds) const
+{
  qds << description_;
  qds << representation_;
 

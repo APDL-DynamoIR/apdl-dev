@@ -36,6 +36,7 @@ public:
 
  APDL_Annotated_Data(_passkey);
  void supply_data(QByteArray& qba) const;
+ void supply_data(QDataStream& qds) const;
 
 
  static void absorb_data(QDataStream& qds, APDL_Annotated_Data& _this);
