@@ -8,6 +8,7 @@ DEFINES += APDL_UNIQUE_DEFAULT_IDENTIFIER=__FILE__
 
 HEADERS += \
   $$SRC_DIR/apdl-refi.h \
+  $$SRC_DIR/apdl-refi_op.h \
   $$SRC_DIR/apdl-basic-application.h \
   $$SRC_DIR/provenance/apdl-unique.h \
   $$SRC_DIR/provenance/apdl-annotated-data.h \

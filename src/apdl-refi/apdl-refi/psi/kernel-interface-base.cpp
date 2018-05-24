@@ -1,7 +1,11 @@
 
 #include "kernel-interface-base.h"
 
+#include "apdl-refi_op.h"
+
 #include "apdlns.h"
+
+#include "channels/psi-signature.h"
 
 USING_APDLNS(RefI)
 
@@ -34,4 +38,10 @@ void Kernel_Interface_Base::supply_data(QDataStream& qds) const
  QString enc;
  get_string_encoding(enc);
  qds << enc;
+
+ qds << values_.size();
+ for(PSI_Signature* s :  values_)
+ {
+  qds << *s;
+ }
 }

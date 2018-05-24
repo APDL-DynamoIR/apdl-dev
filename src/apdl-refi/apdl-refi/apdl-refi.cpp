@@ -1,6 +1,8 @@
 
 #include "apdl-refi.h"
 
+#include "apdl-refi_op.h"
+
 #include "apdlns.h"
 
 #include "apdl-basic-application.h"

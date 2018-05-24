@@ -24,6 +24,10 @@ public:
 
  PSI_Signature();
 
+ void supply_data(QByteArray& qba) const;
+ void supply_data(QDataStream& qds) const;
+
+
 
 };
 
