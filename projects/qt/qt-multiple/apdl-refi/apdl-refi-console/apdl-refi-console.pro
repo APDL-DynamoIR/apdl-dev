@@ -7,7 +7,14 @@ include(../build-group.pri)
 
 TEMPLATE = app
 
-SOURCES += $$SRC_DIR/main.cpp
+HEADERS += \
+  $$SRC_ROOT_DIR/base32.h \
+
+
+SOURCES += \
+  $$SRC_DIR/main.cpp \
+  $$SRC_ROOT_DIR/base32.cpp \
+
 
 
 
