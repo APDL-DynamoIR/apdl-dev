@@ -11,3 +11,7 @@ Kernel_Component_Interface::Kernel_Component_Interface()
 
 }
 
+void Kernel_Component_Interface::supply_data(QByteArray& qba) const
+{
+ Kernel_Interface_Base::supply_data(qba);
+}

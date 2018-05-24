@@ -11,3 +11,8 @@ Kernel_Service_Interface::Kernel_Service_Interface()
 
 }
 
+void Kernel_Service_Interface::supply_data(QByteArray& qba) const
+{
+ Kernel_Interface_Base::supply_data(qba);
+}
+

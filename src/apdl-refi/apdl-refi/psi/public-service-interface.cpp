@@ -17,19 +17,19 @@ void Public_Service_Interface::supply_data(QByteArray& qba) const
 
  {
   QByteArray qba1;
-  ksi.supply_data(qba1);
+  ksi_.supply_data(qba1);
   qds << qba1;
  }
 
  {
   QByteArray qba1;
-  kbi.supply_data(qba1);
+  kbi_.supply_data(qba1);
   qds << qba1;
  }
 
  {
   QByteArray qba1;
-  kci.supply_data(qba1);
+  kci_.supply_data(qba1);
   qds << qba1;
  }
 
