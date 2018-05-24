@@ -20,7 +20,7 @@ class PSI_Signature
 
 public:
 
- ACCESSORS(QList<PSI_Carrier> ,carriers)
+ ACCESSORS__RGET(QList<PSI_Carrier> ,carriers)
 
  PSI_Signature();
 
