@@ -21,6 +21,8 @@ class Kernel_Service_Interface : public Kernel_Interface_Base
 public:
 
  Kernel_Service_Interface();
+ void supply_data(QByteArray& qba) const;
+
 
 };
 

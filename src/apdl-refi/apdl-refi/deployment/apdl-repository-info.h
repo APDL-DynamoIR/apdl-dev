@@ -35,6 +35,7 @@ public:
 
    // // not explicit
  APDL_Repository_Info(QUrl url);
+ void supply_data(QByteArray& qba) const;
 
 
 };

@@ -34,6 +34,8 @@ public:
 
  Public_Service_Interface();
 
+ void supply_data(QByteArray& qba) const;
+
 
 };
 

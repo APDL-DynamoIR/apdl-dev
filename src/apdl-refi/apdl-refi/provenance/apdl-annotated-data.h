@@ -35,6 +35,7 @@ public:
  explicit APDL_Annotated_Data(const APDL_Unique& application_unique_instance);
 
  APDL_Annotated_Data(_passkey);
+ void supply_data(QByteArray& qba) const;
 
 };
 

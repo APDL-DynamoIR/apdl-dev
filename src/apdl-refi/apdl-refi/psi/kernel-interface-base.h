@@ -25,6 +25,8 @@ public:
  ACCESSORS__RGET(QList<PSI_Signature*> ,values)
 
  Kernel_Interface_Base();
+ void supply_data(QByteArray& qba) const;
+
 
 };
 

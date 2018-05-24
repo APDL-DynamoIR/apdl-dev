@@ -36,6 +36,7 @@ public:
 
 
  APDL_Local_Deployment_Info();
+ void supply_data(QByteArray& qba) const;
 
 
 };

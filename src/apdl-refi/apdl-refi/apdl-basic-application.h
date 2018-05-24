@@ -26,6 +26,7 @@ public:
 
  void set_version_string(unsigned maj, unsigned min, unsigned patch = 0);
 
+ void supply_data(QByteArray& qba) const;
 
 
 

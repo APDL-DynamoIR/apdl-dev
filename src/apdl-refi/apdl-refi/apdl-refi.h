@@ -6,6 +6,8 @@
 
 #include "accessors.h"
 
+#include <QtGlobal>
+
 
 APDLNS_(RefI)
 
@@ -33,6 +35,10 @@ public:
 
  APDL_Refi();
 
+ quint16 get_init_code() const;
+ void init_from_init_code(quint16 code);
+
+ void supply_data(QByteArray& qba) const;
 
 };
 

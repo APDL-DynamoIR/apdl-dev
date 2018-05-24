@@ -3,6 +3,9 @@
 
 #include "apdlns.h"
 
+#include <QDataStream>
+
+
 USING_APDLNS(RefI)
 
 PSI_Carrier::PSI_Carrier()

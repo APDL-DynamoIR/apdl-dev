@@ -21,6 +21,7 @@ class Kernel_Bridge_Interface : public Kernel_Interface_Base
 public:
 
  Kernel_Bridge_Interface();
+ void supply_data(QByteArray& qba) const;
 
 };
 
