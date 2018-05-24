@@ -7,26 +7,22 @@
 #include "accessors.h"
 
 #include <QString>
+#include <QList>
+
+#include "psi-carrier.h"
+
 
 APDLNS_(RefI)
 
 class PSI_Signature
 {
- QString name_;
- QString version_string_;
- QString description_;
+ QList<PSI_Carrier> carriers_;
 
 public:
 
- ACCESSORS(QString ,name)
- ACCESSORS(QString ,version_string)
- ACCESSORS(QString ,description)
+ ACCESSORS(QList<PSI_Carrier> ,carriers)
 
- APDL_Basic_Application();
-
- void set_version_string(unsigned maj, unsigned min, unsigned patch = 0);
-
-
+ PSI_Signature();
 
 
 };

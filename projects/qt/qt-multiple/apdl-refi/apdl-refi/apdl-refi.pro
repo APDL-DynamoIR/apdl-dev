@@ -13,6 +13,7 @@ HEADERS += \
   $$SRC_DIR/provenance/apdl-annotated-data.h \
   $$SRC_DIR/deployment/apdl-local-deployment-info.h \
   $$SRC_DIR/deployment/apdl-repository-info.h \
+  $$SRC_DIR/psi/kernel-interface-base.h \
   $$SRC_DIR/psi/kernel-bridge-interface.h \
   $$SRC_DIR/psi/kernel-component-interface.h \
   $$SRC_DIR/psi/kernel-service-interface.h \
@@ -32,6 +33,7 @@ SOURCES +=  \
   $$SRC_DIR/provenance/apdl-annotated-data.cpp \
   $$SRC_DIR/deployment/apdl-local-deployment-info.cpp \
   $$SRC_DIR/deployment/apdl-repository-info.cpp \
+  $$SRC_DIR/psi/kernel-interface-base.cpp \
   $$SRC_DIR/psi/kernel-bridge-interface.cpp \
   $$SRC_DIR/psi/kernel-component-interface.cpp \
   $$SRC_DIR/psi/kernel-service-interface.cpp \

@@ -13,7 +13,7 @@ PSI_Carrier::PSI_Carrier()
 
 void PSI_Carrier::get_flags(QMap<QString, quint64>& flag_map)
 {
- if(*flagcode_)
+ if(flagcode_)
  {
   QStringList qsl = flagcode_->split(' ');
   for(QString qs : qsl)

@@ -6,13 +6,9 @@
 USING_APDLNS(RefI)
 
 
-APDL_Basic_Application::APDL_Basic_Application()
+Kernel_Bridge_Interface::Kernel_Bridge_Interface()
+  :  Kernel_Interface_Base()
 {
 
 }
 
-
-void APDL_Basic_Application::set_version_string(unsigned maj, unsigned min, unsigned patch)
-{
- set_version_string(QString("%1.%2.%3").arg(maj).arg(min).arg(patch));
-}

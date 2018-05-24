@@ -6,26 +6,23 @@
 
 #include "accessors.h"
 
+#include "psi-signature.h"
+
 #include <QString>
 
 APDLNS_(RefI)
 
 class PSI_Type_Expression
 {
- QString name_;
- QString version_string_;
- QString description_;
+ QString symbol_;
+ PSI_Signature signature_;
 
 public:
 
- ACCESSORS(QString ,name)
- ACCESSORS(QString ,version_string)
- ACCESSORS(QString ,description)
+ PSI_Type_Expression();
 
- APDL_Basic_Application();
-
- void set_version_string(unsigned maj, unsigned min, unsigned patch = 0);
-
+ ACCESSORS(QString ,symbol)
+ ACCESSORS__RGET(PSI_Signature ,signature)
 
 
 
