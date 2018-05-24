@@ -13,6 +13,6 @@ a database or triplestore, or embedded in (say) XML documents.
 
 This binary direct serialization is designed to be the focal method for sharing 
 APDL data.  Other formats (like XML and RDF) will be supported if they behave 
-in client-server and per-to-peer scenarios similarly to binary serialization.
+in client-server and peer-to-peer scenarios similarly to binary serialization.
 
 
