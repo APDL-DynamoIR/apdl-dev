@@ -27,7 +27,11 @@ public:
  void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 
-
+ static void absorb_data(QDataStream& qds, PSI_Signature& _this);
+ friend void operator>>(QDataStream& qds, PSI_Signature& _this)
+ {
+  PSI_Signature::absorb_data(qds, _this);
+ }
 
 };
 

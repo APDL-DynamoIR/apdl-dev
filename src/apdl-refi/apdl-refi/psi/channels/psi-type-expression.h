@@ -24,6 +24,16 @@ public:
  ACCESSORS(QString ,symbol)
  ACCESSORS__RGET(PSI_Signature ,signature)
 
+ void supply_data(QByteArray& qba) const;
+ void supply_data(QDataStream& qds) const;
+
+ void absorb_data(const QByteArray& qba);
+
+ static void absorb_data(QDataStream& qds, PSI_Type_Expression& _this);
+ friend void operator>>(QDataStream& qds, PSI_Type_Expression& _this)
+ {
+  PSI_Type_Expression::absorb_data(qds, _this);
+ }
 
 
 };

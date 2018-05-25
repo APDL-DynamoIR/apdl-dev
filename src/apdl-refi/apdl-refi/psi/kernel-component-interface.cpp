@@ -29,8 +29,8 @@ void Kernel_Component_Interface::absorb_data(QDataStream& qds, Kernel_Component_
  qds >> _this.representation_;
  QString enc;
  qds >> enc;
-
  _this.read_from_encoding(enc);
+
 }
 
 

@@ -24,7 +24,7 @@ protected:
  QString representation_;
 
  virtual void get_string_encoding(QString& outparam) const;
- virtual void read_from_encoding(QString enc);
+ virtual int read_from_encoding(QString enc);
 
 public:
 

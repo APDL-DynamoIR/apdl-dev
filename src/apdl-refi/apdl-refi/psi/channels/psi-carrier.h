@@ -35,6 +35,18 @@ public:
 
  void get_flags(QMap<QString, quint64>& flag_map);
 
+ void dodelete();
+
+ void init_flagcode(QString fc);
+
+ void supply_data(QByteArray& qba) const;
+ void supply_data(QDataStream& qds) const;
+
+ static void absorb_data(QDataStream& qds, PSI_Carrier& _this);
+ friend void operator>>(QDataStream& qds, PSI_Carrier& _this)
+ {
+  PSI_Carrier::absorb_data(qds, _this);
+ }
 
 
 

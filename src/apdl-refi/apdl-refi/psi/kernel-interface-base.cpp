@@ -19,9 +19,9 @@ void Kernel_Interface_Base::get_string_encoding(QString& outparam) const
  outparam = representation_;
 }
 
-void Kernel_Interface_Base::read_from_encoding(QString enc)
+int Kernel_Interface_Base::read_from_encoding(QString enc)
 {
-
+ return -1;
 }
 
 void Kernel_Interface_Base::supply_data(QByteArray& qba) const
