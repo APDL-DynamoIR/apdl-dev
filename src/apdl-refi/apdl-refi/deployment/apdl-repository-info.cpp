@@ -34,6 +34,17 @@ void APDL_Repository_Info::supply_data(QDataStream& qds) const
  qds << build_folder_template_;
 }
 
+void APDL_Repository_Info::supply_report(QTextStream& qts) const
+{
+ qts << "\nAPDL_Repository_Info ... ";
+ qts << "\n URL: " << url_.toString();
+ qts << "\n Repository Kind: " << repository_kind_;
+ qts << "\n Programming Languages: " << programming_languages_.DEFAULT_JOIN;
+ qts << "\n Comments: " << comments_.DEFAULT_JOIN;
+ qts << "\n Build Folder Template: " << build_folder_template_;
+}
+
+
 void APDL_Repository_Info::absorb_data(QDataStream& qds, APDL_Repository_Info& _this)
 {
  qds >> _this.url_;

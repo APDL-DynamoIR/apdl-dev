@@ -9,6 +9,7 @@
 #include "psi-signature.h"
 
 #include <QString>
+#include <QTextStream>
 
 APDLNS_(RefI)
 
@@ -24,7 +25,7 @@ public:
  ACCESSORS(QString ,symbol)
  ACCESSORS__RGET(PSI_Signature ,signature)
 
- void supply_data(QByteArray& qba) const;
+ void supply_report(QTextStream& qts) const; void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 
  void absorb_data(const QByteArray& qba);

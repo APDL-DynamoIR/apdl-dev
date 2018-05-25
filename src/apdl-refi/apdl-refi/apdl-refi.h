@@ -8,6 +8,7 @@
 
 #include <QtGlobal>
 
+#include <QTextStream>
 
 APDLNS_(RefI)
 
@@ -38,6 +39,9 @@ public:
 
  quint16 get_init_code() const;
  void init_from_init_code(quint16 code);
+
+ void supply_report(QString& text);
+ void supply_report(QTextStream& qts) const;
 
  void supply_data(QByteArray& qba) const;
  void absorb_data(const QByteArray& qba);

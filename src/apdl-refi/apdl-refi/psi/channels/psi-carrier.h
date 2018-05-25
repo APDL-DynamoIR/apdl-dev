@@ -8,6 +8,7 @@
 
 #include <QString>
 #include <QMap>
+#include <QTextStream>
 
 APDLNS_(RefI)
 
@@ -39,7 +40,7 @@ public:
 
  void init_flagcode(QString fc);
 
- void supply_data(QByteArray& qba) const;
+ void supply_report(QTextStream& qts) const; void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 
  static void absorb_data(QDataStream& qds, PSI_Carrier& _this);

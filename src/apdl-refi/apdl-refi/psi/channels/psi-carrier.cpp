@@ -12,7 +12,7 @@
 USING_APDLNS(RefI)
 
 PSI_Carrier::PSI_Carrier()
-  :  flagcode_(nullptr), typex_(nullptr)
+  :  typex_(nullptr), flagcode_(nullptr)
 {
 
 }

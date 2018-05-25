@@ -2,6 +2,8 @@
 #ifndef APDLNS__H
 #define APDLNS__H
 
+#define DEFAULT_JOIN join("\n  +\n")
+
 #define USE_APDLNS
 
 #ifdef USE_APDLNS
@@ -20,12 +22,12 @@
 #define INNER_NS_(X) \
  namespace X{
 #endif
-     
+
 #ifndef _INNER_NS
 #define _INNER_NS(X) \
  }
 #endif
- 
+
 #define USING_APDLNS(x) \
  using namespace APDL::x;
 
@@ -38,9 +40,9 @@
 
 #define USING_APDLNS(x) \
 
-#define INNER_NS_(X) 
+#define INNER_NS_(X)
 
-#define _INNER_NS(X) 
+#define _INNER_NS(X)
 
 #endif
 

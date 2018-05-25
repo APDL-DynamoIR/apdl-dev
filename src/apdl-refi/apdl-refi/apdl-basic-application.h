@@ -7,6 +7,7 @@
 #include "accessors.h"
 
 #include <QString>
+#include <QTextStream>
 
 APDLNS_(RefI)
 
@@ -26,6 +27,7 @@ public:
 
  void set_version_string(unsigned maj, unsigned min, unsigned patch = 0);
 
+ void supply_report(QTextStream& qts) const;
  void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 
@@ -38,6 +40,7 @@ public:
   APDL_Basic_Application::absorb_data(qds, _this);
  }
 };
+
 
 _APDLNS(RefI)
 

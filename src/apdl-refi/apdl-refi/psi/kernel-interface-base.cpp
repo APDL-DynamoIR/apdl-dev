@@ -45,3 +45,15 @@ void Kernel_Interface_Base::supply_data(QDataStream& qds) const
   qds << *s;
  }
 }
+
+
+void Kernel_Interface_Base::supply_report(QTextStream& qts) const
+{
+ qts << "\n Description: " << description_;
+ qts << "\n Representation: " << representation_;
+
+ QString enc;
+ get_string_encoding(enc);
+ qts << "\n Encoding: " << enc;
+ qts << "\n Values Size: " << values_.size();
+}

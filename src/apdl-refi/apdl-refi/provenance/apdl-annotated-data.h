@@ -7,6 +7,7 @@
 #include "accessors.h"
 
 #include <QString>
+#include <QTextStream>
 
 #include "apdl-unique.h"
 
@@ -35,6 +36,7 @@ public:
  explicit APDL_Annotated_Data(const APDL_Unique& application_unique_instance);
 
  APDL_Annotated_Data(_passkey);
+ void supply_report(QTextStream& qts) const;
  void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 

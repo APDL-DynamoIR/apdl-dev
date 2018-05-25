@@ -34,7 +34,16 @@ void APDL_Annotated_Data::supply_data(QDataStream& qds) const
  qds << data_folder_;
  qds << data_buffer_;
  qds << data_base32_;
+}
 
+void APDL_Annotated_Data::supply_report(QTextStream& qts) const
+{
+ qts << "\nAPDL_Annotated_Data ... ";
+ qts << "\n Application Name: " << application_name_;
+ qts << "\n Data File: " << data_file_;
+ qts << "\n Data Folder: " << data_folder_;
+ qts << "\n Data Buffer Size: " << data_buffer_.size();
+ qts << "\n Data Base32 Size: " << data_base32_.size();
 }
 
 void APDL_Annotated_Data::absorb_data(QDataStream& qds, APDL_Annotated_Data& _this)

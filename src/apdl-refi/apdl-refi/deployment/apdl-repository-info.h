@@ -8,6 +8,8 @@
 
 #include <QString>
 #include <QUrl>
+#include <QTextStream>
+
 
 APDLNS_(RefI)
 
@@ -36,6 +38,7 @@ public:
    // // not explicit
  APDL_Repository_Info(QUrl url);
 
+ void supply_report(QTextStream& qts) const;
  void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 

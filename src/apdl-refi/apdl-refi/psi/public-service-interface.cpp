@@ -26,6 +26,14 @@ void Public_Service_Interface::supply_data(QDataStream& qds) const
  qds << kci_;
 }
 
+void Public_Service_Interface::supply_report(QTextStream& qts) const
+{
+ qts << "\nPublic_Service_Interface ... ";
+ qts << ksi_;
+ qts << kbi_;
+ qts << kci_;
+}
+
 void Public_Service_Interface::absorb_data(QDataStream& qds, Public_Service_Interface& _this)
 {
  qds >> _this.ksi_;

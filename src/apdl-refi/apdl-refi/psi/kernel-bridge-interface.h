@@ -7,6 +7,7 @@
 #include "accessors.h"
 
 #include <QList>
+#include <QTextStream>
 
 #include "kernel-interface-base.h"
 
@@ -21,7 +22,7 @@ class Kernel_Bridge_Interface : public Kernel_Interface_Base
 public:
 
  Kernel_Bridge_Interface();
- void supply_data(QByteArray& qba) const;
+ void supply_report(QTextStream& qts) const; void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 
  static void absorb_data(QDataStream& qds, Kernel_Bridge_Interface& _this);

@@ -8,6 +8,7 @@
 
 #include <QString>
 #include <QList>
+#include <QTextStream>
 
 #include "psi-carrier.h"
 
@@ -24,7 +25,7 @@ public:
 
  PSI_Signature();
 
- void supply_data(QByteArray& qba) const;
+ void supply_report(QTextStream& qts) const; void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 
  static void absorb_data(QDataStream& qds, PSI_Signature& _this);

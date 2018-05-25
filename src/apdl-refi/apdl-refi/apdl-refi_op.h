@@ -7,6 +7,7 @@
 #include "accessors.h"
 
 #include <QtGlobal>
+#include <QTextStream>
 
 
 APDLNS_(RefI)
@@ -17,6 +18,11 @@ void operator<<(QDataStream& qds, const T& _this)
  _this.supply_data(qds);
 }
 
+template<typename T>
+void operator<<(QTextStream& qds, const T& _this)
+{
+ _this.supply_report(qds);
+}
 
 _APDLNS(RefI)
 

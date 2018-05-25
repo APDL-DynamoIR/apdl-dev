@@ -7,6 +7,7 @@
 #include "accessors.h"
 
 #include <QList>
+#include <QTextStream>
 
 
 APDLNS_(RefI)
@@ -34,6 +35,7 @@ public:
 
 
  Kernel_Interface_Base();
+ void supply_report(QTextStream& qts) const;
  void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 

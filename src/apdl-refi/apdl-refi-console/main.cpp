@@ -44,6 +44,19 @@ int main(int argc, char *argv[])
  qDebug() << "test1: " << ari.basic_application_info()->name();
  qDebug() << "test1: " << ari.repository_info()->url();
 
+ QString report;
+ ari.supply_report(report);
+
+ qDebug() << "REPORT: \n========\n\n" << report << "\n\n--------";
+
+ QString save_path = QFileDialog::getSaveFileName(nullptr,
+   "(OPTIONAL) Save Report:");
+
+ if(!save_path.isEmpty())
+ {
+  save_file(save_path, report);
+ }
+
  return 0;
 
 }

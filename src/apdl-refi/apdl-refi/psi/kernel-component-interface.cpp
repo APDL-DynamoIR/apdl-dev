@@ -13,6 +13,12 @@ Kernel_Component_Interface::Kernel_Component_Interface()
 
 }
 
+void Kernel_Component_Interface::supply_report(QTextStream& qts) const
+{
+ qts << "\nKernel_Component_Interface ... ";
+ Kernel_Interface_Base::supply_report(qts);
+}
+
 void Kernel_Component_Interface::supply_data(QDataStream& qds) const
 {
  Kernel_Interface_Base::supply_data(qds);

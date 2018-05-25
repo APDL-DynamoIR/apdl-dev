@@ -49,3 +49,14 @@ void APDL_Local_Deployment_Info::supply_data(QDataStream& qds) const
  qds << args_templates_;
 }
 
+void APDL_Local_Deployment_Info::supply_report(QTextStream& qts) const
+{
+ qts << "\nAPDL_Local_Deployment_Info ... ";
+ qts << "\n Executable Path: " << executable_path_;
+ qts << "\n Internal Data Path: " << internal_data_path_;
+ qts << "\n User Data Path: " << user_data_path_;
+ qts << "\n Comments: " << comments_.DEFAULT_JOIN;
+ qts << "\n Contextualiation Method: " << contextualiation_method_;
+ qts << "\n Args Templates: " << args_templates_.DEFAULT_JOIN;
+}
+

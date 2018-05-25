@@ -18,6 +18,14 @@ void APDL_Basic_Application::set_version_string(unsigned maj, unsigned min, unsi
  set_version_string(QString("%1.%2.%3").arg(maj).arg(min).arg(patch));
 }
 
+void APDL_Basic_Application::supply_report(QTextStream& qts) const
+{
+ qts << "\nAPDL_Basic_Application ... ";
+ qts << "\n Name: " << name_;
+ qts << "\n Version String: " << version_string_;
+ qts << "\n Description: " << description_;
+}
+
 void APDL_Basic_Application::supply_data(QDataStream& qds) const
 {
  qds << name_;

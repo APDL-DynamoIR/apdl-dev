@@ -16,6 +16,12 @@ Kernel_Bridge_Interface::Kernel_Bridge_Interface()
 }
 
 
+void Kernel_Bridge_Interface::supply_report(QTextStream& qts) const
+{
+ qts << "\nKernel_Bridge_Interface ... ";
+ Kernel_Interface_Base::supply_report(qts);
+}
+
 void Kernel_Bridge_Interface::supply_data(QDataStream& qds) const
 {
  Kernel_Interface_Base::supply_data(qds);

@@ -8,6 +8,7 @@
 
 #include <QString>
 #include <QQueue>
+#include <QTextStream>
 
 APDLNS_(RefI)
 
@@ -36,6 +37,7 @@ public:
 
 
  APDL_Local_Deployment_Info();
+ void supply_report(QTextStream& qts) const;
  void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 

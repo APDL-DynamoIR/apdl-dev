@@ -72,6 +72,33 @@ void APDL_Refi::init_from_init_code(quint16 code)
    init_psi();
 }
 
+void APDL_Refi::supply_report(QString& text)
+{
+ QTextStream qts(&text, QIODevice::WriteOnly);
+ supply_report(qts);
+}
+
+void APDL_Refi::supply_report(QTextStream& qts) const
+{
+ qts << "Init Code: " << get_init_code();
+
+ if(basic_application_info_)
+   qts << *basic_application_info_;
+
+ if(local_deployment_info_)
+   qts << *local_deployment_info_;
+
+ if(repository_info_)
+   qts << *repository_info_;
+
+ if(annotated_data_)
+   qts << *annotated_data_;
+
+ if(psi_)
+   qts << *psi_;
+}
+
+
 void APDL_Refi::supply_data(QByteArray& qba) const
 {
  QDataStream qds(&qba, QIODevice::WriteOnly);
