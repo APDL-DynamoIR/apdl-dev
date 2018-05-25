@@ -35,7 +35,8 @@ public:
 
  Public_Service_Interface();
 
- void supply_report(QTextStream& qts) const; void supply_data(QByteArray& qba) const;
+ void supply_report(QTextStream& qts) const;
+ void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;
 
  static void absorb_data(QDataStream& qds, Public_Service_Interface& _this);

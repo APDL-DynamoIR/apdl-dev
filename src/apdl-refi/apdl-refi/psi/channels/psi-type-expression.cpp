@@ -18,6 +18,11 @@ void PSI_Type_Expression::absorb_data(const QByteArray& qba)
  absorb_data(qds, *this);
 }
 
+void PSI_Type_Expression::supply_report(QTextStream& qts) const
+{
+
+}
+
 void PSI_Type_Expression::supply_data(QByteArray& qba) const
 {
  QDataStream qds(&qba, QIODevice::WriteOnly);

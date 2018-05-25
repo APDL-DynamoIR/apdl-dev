@@ -13,6 +13,11 @@ PSI_Signature::PSI_Signature()
 
 }
 
+void PSI_Signature::supply_report(QTextStream& qts) const
+{
+
+}
+
 void PSI_Signature::supply_data(QByteArray& qba) const
 {
  QDataStream qds(&qba, QIODevice::WriteOnly);

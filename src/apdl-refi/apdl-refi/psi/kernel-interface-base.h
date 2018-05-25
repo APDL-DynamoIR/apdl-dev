@@ -33,8 +33,8 @@ public:
  ACCESSORS__RGET(QList<PSI_Signature*> ,values)
  ACCESSORS(QString ,representation)
 
-
  Kernel_Interface_Base();
+
  void supply_report(QTextStream& qts) const;
  void supply_data(QByteArray& qba) const;
  void supply_data(QDataStream& qds) const;

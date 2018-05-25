@@ -35,6 +35,11 @@ void PSI_Carrier::supply_data(QByteArray& qba) const
  supply_data(qds);
 }
 
+void PSI_Carrier::supply_report(QTextStream& qts) const
+{
+
+}
+
 void PSI_Carrier::supply_data(QDataStream& qds) const
 {
  qds << symbol_;
