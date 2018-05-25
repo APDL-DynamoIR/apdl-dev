@@ -15,6 +15,6 @@ SOURCES += \
   $$SRC_DIR/main.cpp \
   $$SRC_ROOT_DIR/base32.cpp \
 
-
+LIBS += -L$$TARGETSDIR -lapdl-refi
 
 

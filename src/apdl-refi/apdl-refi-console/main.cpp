@@ -8,10 +8,16 @@
 
 #include "apdlns.h"
 
+#include "apdl-refi/apdl-refi/apdl-refi.h"
+#include "apdl-refi/apdl-refi/apdl-basic-application.h"
+#include "apdl-refi/apdl-refi/deployment/apdl-repository-info.h"
+
+#include "base32.h"
 
 
-//USING_APDLNS(RefI)
+USING_APDLNS(RefI)
 USING_APDLNS(TextIO)
+USING_APDLNS(Base32)
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +33,17 @@ int main(int argc, char *argv[])
  qDebug() << "File text: \n========\n" << text
    << "\n--------\n";
 
- qapp.exec();
+ QByteArray qba;
+
+ decode_qstring(text, qba);
+
+ APDL_Refi ari;
+
+ ari.absorb_data(qba);
+
+ qDebug() << "test1: " << ari.basic_application_info()->name();
+ qDebug() << "test1: " << ari.repository_info()->url();
+
+ return 0;
 
 }
